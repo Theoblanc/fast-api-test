@@ -24,7 +24,7 @@ class AfreecaList(BaseModel):
     bj_id: str
     bj_name: str
     bj_medals: List[str]
-    bj_category: List[Category]
+    bj_categorys: List[Category]
     bj_thumbnail: str
     bj_banner: str
     bj_average_view: int

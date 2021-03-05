@@ -9,17 +9,15 @@ services:
       - ./api-server:/app
     ports:
       - "80:80"
-    # env_file: .env
-    # command: /start-reload.sh
-    # links:
-    #   - postgres
-  # postgres:
-  #   image: postgres:latest
-  #   container_name: postgres
-  #   restart: always
-  #   ports:
-  #     - 5432:5432
-  #   environment:
-  #     - POSTGRES_DB=meket
-  #     - POSTGRES_USER=meket
-  #     - POSTGRES_PASSWORD=admin
+    links:
+      - postgres
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_DB=meket
+      - POSTGRES_USER=meket
+      - POSTGRES_PASSWORD=admin
